@@ -1,0 +1,4 @@
+LIBRARY Path_planner_with_controller_localization_sfun.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion

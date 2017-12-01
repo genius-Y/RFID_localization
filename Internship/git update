@@ -1,0 +1,521 @@
+nishant@p500:~$ git clone pi@172.17.53.52:rocabot.git
+Cloning into 'rocabot'...
+remote: Counting objects: 752, done.
+remote: Compressing objects: 100% (720/720), done.
+remote: Total 752 (delta 440), reused 95 (delta 29)
+Receiving objects: 100% (752/752), 605.15 KiB | 645.00 KiB/s, done.
+Resolving deltas: 100% (440/440), done.
+nishant@p500:~$ cd rocabot/
+nishant@p500:~/rocabot$ ls
+camtest.py     __init__.py  neato.py    sensors.py        worldmodel.py
+chat           lidar.py     network.py  service
+connector.py   manager.py   planner.py  spnav
+controller.py  monitor.py   pozyx       spnav_control.py
+fakeworld.py   mpu6050.py   robot.py    testmotion.py
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 4, in <module>
+    import spnav
+  File "/home/nishant/rocabot/spnav/__init__.py", line 15, in <module>
+    libspnav = cdll.LoadLibrary('libspnav.so')
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 440, in LoadLibrary
+    return self._dlltype(name)
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 362, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libspnav.so: cannot open shared object file: No such file or directory
+nishant@p500:~/rocabot$ pip
+The program 'pip' is currently not installed. You can install it by typing:
+sudo apt install python-pip
+nishant@p500:~/rocabot$ sudo apt install python-pip
+[sudo] password for nishant: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libexpat1-dev libpython-all-dev libpython-dev libpython2.7-dev python-all
+  python-all-dev python-dbus python-dev python-keyring python-keyrings.alt
+  python-pip-whl python-secretstorage python-wheel python-xdg python2.7-dev
+Suggested packages:
+  python-dbus-dbg python-dbus-doc libkf5wallet-bin python-fs python-gdata
+  python-keyczar python-secretstorage-doc
+The following NEW packages will be installed:
+  libexpat1-dev libpython-all-dev libpython-dev libpython2.7-dev python-all
+  python-all-dev python-dbus python-dev python-keyring python-keyrings.alt
+  python-pip python-pip-whl python-secretstorage python-wheel python-xdg
+  python2.7-dev
+0 upgraded, 16 newly installed, 0 to remove and 26 not upgraded.
+Need to get 30.3 MB of archives.
+After this operation, 46.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty-updates/main amd64 libexpat1-dev amd64 2.2.0-2ubuntu0.1 [122 kB]
+Get:2 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 libpython2.7-dev amd64 2.7.13-2 [28.2 MB]
+Get:3 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 libpython-dev amd64 2.7.13-2 [7,842 B]
+Get:4 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 libpython-all-dev amd64 2.7.13-2 [994 B]
+Get:5 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-all amd64 2.7.13-2 [978 B]
+Get:6 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python2.7-dev amd64 2.7.13-2 [276 kB]
+Get:7 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-dev amd64 2.7.13-2 [1,160 B]
+Get:8 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-all-dev amd64 2.7.13-2 [1,000 B]
+Get:9 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-dbus amd64 1.2.4-1 [85.1 kB]
+Get:10 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-secretstorage all 2.3.1-2 [11.8 kB]
+Get:11 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-keyring all 10.3.1-1 [29.2 kB]
+Get:12 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/main amd64 python-keyrings.alt all 2.2-1 [16.1 kB]
+Get:13 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-pip-whl all 9.0.1-2 [1,379 kB]
+Get:14 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-pip all 9.0.1-2 [151 kB]
+Get:15 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-wheel all 0.29.0-2 [48.3 kB]
+Get:16 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-xdg all 0.25-4 [31.4 kB]
+Fetched 30.3 MB in 7s (4,204 kB/s)                                             
+Selecting previously unselected package libexpat1-dev:amd64.
+(Reading database ... 304430 files and directories currently installed.)
+Preparing to unpack .../00-libexpat1-dev_2.2.0-2ubuntu0.1_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.2.0-2ubuntu0.1) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../01-libpython2.7-dev_2.7.13-2_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.13-2) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../02-libpython-dev_2.7.13-2_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.13-2) ...
+Selecting previously unselected package libpython-all-dev:amd64.
+Preparing to unpack .../03-libpython-all-dev_2.7.13-2_amd64.deb ...
+Unpacking libpython-all-dev:amd64 (2.7.13-2) ...
+Selecting previously unselected package python-all.
+Preparing to unpack .../04-python-all_2.7.13-2_amd64.deb ...
+Unpacking python-all (2.7.13-2) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../05-python2.7-dev_2.7.13-2_amd64.deb ...
+Unpacking python2.7-dev (2.7.13-2) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../06-python-dev_2.7.13-2_amd64.deb ...
+Unpacking python-dev (2.7.13-2) ...
+Selecting previously unselected package python-all-dev.
+Preparing to unpack .../07-python-all-dev_2.7.13-2_amd64.deb ...
+Unpacking python-all-dev (2.7.13-2) ...
+Selecting previously unselected package python-dbus.
+Preparing to unpack .../08-python-dbus_1.2.4-1_amd64.deb ...
+Unpacking python-dbus (1.2.4-1) ...
+Selecting previously unselected package python-secretstorage.
+Preparing to unpack .../09-python-secretstorage_2.3.1-2_all.deb ...
+Unpacking python-secretstorage (2.3.1-2) ...
+Selecting previously unselected package python-keyring.
+Preparing to unpack .../10-python-keyring_10.3.1-1_all.deb ...
+Unpacking python-keyring (10.3.1-1) ...
+Selecting previously unselected package python-keyrings.alt.
+Preparing to unpack .../11-python-keyrings.alt_2.2-1_all.deb ...
+Unpacking python-keyrings.alt (2.2-1) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../12-python-pip-whl_9.0.1-2_all.deb ...
+Unpacking python-pip-whl (9.0.1-2) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../13-python-pip_9.0.1-2_all.deb ...
+Unpacking python-pip (9.0.1-2) ...
+Selecting previously unselected package python-wheel.
+Preparing to unpack .../14-python-wheel_0.29.0-2_all.deb ...
+Unpacking python-wheel (0.29.0-2) ...
+Selecting previously unselected package python-xdg.
+Preparing to unpack .../15-python-xdg_0.25-4_all.deb ...
+Unpacking python-xdg (0.25-4) ...
+Setting up python-pip-whl (9.0.1-2) ...
+Setting up python-wheel (0.29.0-2) ...
+Setting up python-keyrings.alt (2.2-1) ...
+Setting up libexpat1-dev:amd64 (2.2.0-2ubuntu0.1) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up libpython2.7-dev:amd64 (2.7.13-2) ...
+Setting up python-dbus (1.2.4-1) ...
+Remove stale byte-compiled files...
+Setting up python-pip (9.0.1-2) ...
+Setting up python2.7-dev (2.7.13-2) ...
+Setting up python-all (2.7.13-2) ...
+Setting up python-xdg (0.25-4) ...
+Setting up python-secretstorage (2.3.1-2) ...
+Setting up libpython-dev:amd64 (2.7.13-2) ...
+Setting up python-keyring (10.3.1-1) ...
+Setting up python-dev (2.7.13-2) ...
+Setting up libpython-all-dev:amd64 (2.7.13-2) ...
+Setting up python-all-dev (2.7.13-2) ...
+nishant@p500:~/rocabot$ pip
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be
+                              used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be
+                              used up to 3 times (corresponding to WARNING,
+                              ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should
+                              attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does
+                              not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file
+                              containing the private key and the certificate
+                              in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+nishant@p500:~/rocabot$ pip install spnav
+Collecting spnav
+  Downloading spnav-0.9.tar.gz
+Building wheels for collected packages: spnav
+  Running setup.py bdist_wheel for spnav ... done
+  Stored in directory: /home/nishant/.cache/pip/wheels/09/47/c8/09ee3c8dbf06b070a4d531d1f11185cd67faa1e1fe6a31a4f4
+Successfully built spnav
+Installing collected packages: spnav
+Successfully installed spnav-0.9
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 4, in <module>
+    import spnav
+  File "/home/nishant/rocabot/spnav/__init__.py", line 15, in <module>
+    libspnav = cdll.LoadLibrary('libspnav.so')
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 440, in LoadLibrary
+    return self._dlltype(name)
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 362, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libspnav.so: cannot open shared object file: No such file or directory
+nishant@p500:~/rocabot$ apt-file search spnav
+The program 'apt-file' is currently not installed. You can install it by typing:
+sudo apt install apt-file
+nishant@p500:~/rocabot$ apropos spnav
+spnav: nothing appropriate.
+nishant@p500:~/rocabot$ apt-cache search spnav
+libspnav-dev - Library to access 3D-input-devices
+libspnav0 - Library to access 3D-input-devices (development files)
+nishant@p500:~/rocabot$ sudo apt-get install libspnav0
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+Suggested packages:
+  spacenavd
+The following NEW packages will be installed:
+  libspnav0
+0 upgraded, 1 newly installed, 0 to remove and 26 not upgraded.
+Need to get 8,552 B of archives.
+After this operation, 48.1 kB of additional disk space will be used.
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 libspnav0 amd64 0.2.3-1 [8,552 B]
+Fetched 8,552 B in 0s (25.5 kB/s)
+Selecting previously unselected package libspnav0.
+(Reading database ... 304922 files and directories currently installed.)
+Preparing to unpack .../libspnav0_0.2.3-1_amd64.deb ...
+Unpacking libspnav0 (0.2.3-1) ...
+Setting up libspnav0 (0.2.3-1) ...
+Processing triggers for libc-bin (2.24-9ubuntu2.2) ...
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 4, in <module>
+    import spnav
+  File "/home/nishant/rocabot/spnav/__init__.py", line 15, in <module>
+    libspnav = cdll.LoadLibrary('libspnav.so')
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 440, in LoadLibrary
+    return self._dlltype(name)
+  File "/usr/lib/python2.7/ctypes/__init__.py", line 362, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libspnav.so: cannot open shared object file: No such file or directory
+nishant@p500:~/rocabot$ apt-cache search spnav
+libspnav-dev - Library to access 3D-input-devices
+libspnav0 - Library to access 3D-input-devices (development files)
+nishant@p500:~/rocabot$ sudo apt-get install libspnav-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  libspnav-dev
+0 upgraded, 1 newly installed, 0 to remove and 26 not upgraded.
+Need to get 13.9 kB of archives.
+After this operation, 81.9 kB of additional disk space will be used.
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 libspnav-dev amd64 0.2.3-1 [13.9 kB]
+Fetched 13.9 kB in 0s (40.7 kB/s) 
+Selecting previously unselected package libspnav-dev.
+(Reading database ... 304927 files and directories currently installed.)
+Preparing to unpack .../libspnav-dev_0.2.3-1_amd64.deb ...
+Unpacking libspnav-dev (0.2.3-1) ...
+Setting up libspnav-dev (0.2.3-1) ...
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 6, in <module>
+    from websocket import create_connection
+ImportError: No module named websocket
+nishant@p500:~/rocabot$ sudo apt-get install python-websocket
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  python-websocket
+0 upgraded, 1 newly installed, 0 to remove and 26 not upgraded.
+Need to get 28.8 kB of archives.
+After this operation, 159 kB of additional disk space will be used.
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-websocket all 0.37.0-2 [28.8 kB]
+Fetched 28.8 kB in 0s (75.3 kB/s)     
+Selecting previously unselected package python-websocket.
+(Reading database ... 304946 files and directories currently installed.)
+Preparing to unpack .../python-websocket_0.37.0-2_all.deb ...
+Unpacking python-websocket (0.37.0-2) ...
+Setting up python-websocket (0.37.0-2) ...
+update-alternatives: using /usr/bin/python2-wsdump to provide /usr/bin/wsdump (wsdump) in auto mode
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 7, in <module>
+    from chat import Message
+  File "/home/nishant/rocabot/chat/__init__.py", line 1, in <module>
+    from messages_pb2 import *
+  File "/home/nishant/rocabot/chat/messages_pb2.py", line 6, in <module>
+    from google.protobuf import descriptor as _descriptor
+ImportError: No module named google.protobuf
+nishant@p500:~/rocabot$ sudo apt-get install python-protobuf
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  python-protobuf
+0 upgraded, 1 newly installed, 0 to remove and 26 not upgraded.
+Need to get 263 kB of archives.
+After this operation, 2,294 kB of additional disk space will be used.
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 python-protobuf amd64 3.0.0-9ubuntu2 [263 kB]
+Fetched 263 kB in 0s (929 kB/s)     
+Selecting previously unselected package python-protobuf.
+(Reading database ... 304974 files and directories currently installed.)
+Preparing to unpack .../python-protobuf_3.0.0-9ubuntu2_amd64.deb ...
+Unpacking python-protobuf (3.0.0-9ubuntu2) ...
+Setting up python-protobuf (3.0.0-9ubuntu2) ...
+nishant@p500:~/rocabot$ ./spnav_control.py 
+connect failed: No such file or directory
+Traceback (most recent call last):
+  File "./spnav_control.py", line 12, in <module>
+    spnav.spnav_open()
+  File "/home/nishant/rocabot/spnav/__init__.py", line 190, in spnav_open
+    'failed to connect to the space navigator daemon')
+spnav.SpnavConnectionException: failed to connect to the space navigator daemon
+nishant@p500:~/rocabot$ aptitude
+The program 'aptitude' is currently not installed. You can install it by typing:
+sudo apt install aptitude
+nishant@p500:~/rocabot$ apt-cache search spacenavigator
+nishant@p500:~/rocabot$ apt-cache search space navigator
+libspnav-dev - Library to access 3D-input-devices
+libspnav0 - Library to access 3D-input-devices (development files)
+texlive-generic-extra - TeX Live: Generic additional packages
+nishant@p500:~/rocabot$ apt-cache search connexion
+libnet-sieve-perl - implementation of managesieve protocol to manage sieve scripts
+libspnav-dev - Library to access 3D-input-devices
+libspnav0 - Library to access 3D-input-devices (development files)
+spacenavd - daemon for using 3D input devices from 3Dconnexion
+nishant@p500:~/rocabot$ apt-get install spacenavd
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+nishant@p500:~/rocabot$ sudo apt-get install spacenavd
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libpango1.0-0 libpangox-1.0-0 linux-headers-4.10.0-24
+  linux-headers-4.10.0-24-generic linux-headers-4.10.0-26
+  linux-headers-4.10.0-26-generic linux-headers-4.10.0-28
+  linux-headers-4.10.0-28-generic linux-image-4.10.0-24-generic
+  linux-image-4.10.0-26-generic linux-image-4.10.0-28-generic
+  linux-image-extra-4.10.0-24-generic linux-image-extra-4.10.0-26-generic
+  linux-image-extra-4.10.0-28-generic linux-signed-image-4.10.0-24-generic
+  linux-signed-image-4.10.0-26-generic linux-signed-image-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  spacenavd
+0 upgraded, 1 newly installed, 0 to remove and 26 not upgraded.
+Need to get 32.4 kB of archives.
+After this operation, 136 kB of additional disk space will be used.
+Get:1 ftp://ftpserv.tudelft.nl/pub/Linux/archive.ubuntu.com zesty/universe amd64 spacenavd amd64 0.6-1 [32.4 kB]
+Fetched 32.4 kB in 0s (212 kB/s)
+Selecting previously unselected package spacenavd.
+(Reading database ... 305084 files and directories currently installed.)
+Preparing to unpack .../spacenavd_0.6-1_amd64.deb ...
+Unpacking spacenavd (0.6-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+ureadahead will be reprofiled on next reboot
+Setting up spacenavd (0.6-1) ...
+Created symlink /etc/systemd/system/graphical.target.wants/spacenavd.service → /lib/systemd/system/spacenavd.service.
+Processing triggers for systemd (232-21ubuntu5) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+nishant@p500:~/rocabot$ ./spnav_control.py 
+packet 22 trans  19 rot   0
+packet 22 trans   8 rot -28
+packet 22 trans -94 rot -98
+packet 22 trans -27 rot -346
+packet 22 trans -27 rot -350
+packet 22 trans -27 rot -350
+packet 22 trans -27 rot -164
+packet 22 trans -27 rot -24
+packet 22 trans -27 rot  33
+packet 22 trans -27 rot -37
+packet 22 trans -27 rot  10
+packet 22 trans  85 rot   2
+packet 22 trans -51 rot 350
+packet 22 trans -15 rot 350
+packet 22 trans -11 rot 350
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+packet 22 trans   3 rot  -3
+nishant@p500:~/rocabot$ ./spnav_control.py 
+Traceback (most recent call last):
+  File "./spnav_control.py", line 13, in <module>
+    ws = create_connection("ws://172.17.53.52:7622/messages")
+  File "/usr/lib/python2.7/dist-packages/websocket/_core.py", line 489, in create_connection
+    websock.connect(url, **options)
+  File "/usr/lib/python2.7/dist-packages/websocket/_core.py", line 216, in connect
+    options.pop('socket', None))
+  File "/usr/lib/python2.7/dist-packages/websocket/_http.py", line 67, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/lib/python2.7/dist-packages/websocket/_http.py", line 120, in _open_socket
+    raise err
+socket.error: [Errno 111] Connection refused
+nishant@p500:~/rocabot$ vim neato.py 
+The program 'vim' can be found in the following packages:
+ * vim
+ * vim-gtk3
+ * vim-tiny
+ * neovim
+ * vim-athena
+ * vim-gtk
+ * vim-nox
+Try: sudo apt install <selected package>
+nishant@p500:~/rocabot$ geany neato.py 
+The program 'geany' is currently not installed. You can install it by typing:
+sudo apt install geany
+nishant@p500:~/rocabot$ geany neato.py 
+nishant@p500:~/rocabot$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   neato.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+nishant@p500:~/rocabot$ git add neato.py 
+nishant@p500:~/rocabot$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'nishant@p500.(none)')
+nishant@p500:~/rocabot$ git config --global user.name "Nishant"
+nishant@p500:~/rocabot$ git config --global user.email "nishant2006in@gmail.com"
+nishant@p500:~/rocabot$ git commit
+[master 2e2e8dd] changed neato port
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+nishant@p500:~/rocabot$ cat .git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = pi@172.17.53.52:rocabot.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+nishant@p500:~/rocabot$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 294 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: githook: Mon Sep  4 10:58:56 UTC 2017: Welcome to 'rocabot0' (172.17.53.52/24)
+remote: 
+remote: githook: I will deploy 'master' branch of the 'rocabot' project to '/home/pi/rocabot'
+remote: Already on 'master'
+remote: HEAD is now at 2e2e8dd changed neato port
+remote: 
+remote: githook: Mon Sep  4 10:58:56 UTC 2017: See you soon at 'rocabot0' (172.17.53.52/24)
+To 172.17.53.52:rocabot.git
+   966498a..2e2e8dd  master -> master
+nishant@p500:~/rocabot$ ./spnav_control.py 
+

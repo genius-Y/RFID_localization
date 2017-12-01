@@ -1,0 +1,6 @@
+ssh pi@172.17.53.52
+cd rocabot
+./connector.py
+
+cd rocabot/
+./spnav_control.py
