@@ -19,7 +19,11 @@ end
 [path1] = Astar(scp,b,map);
 
 %%
-plot(start(1,1),start(1,2),'r*',path(:,1),path(:,2),'b-',b(1,1),b(1,2),'r*','Linewidth',9)
-
-hold on;
-plot(path1(:,1),path1(:,2),'r-','Linewidth',2)
+plot(path(:,1),path(:,2),'b-','Linewidth',9)
+hold on
+plot(start(1,1),start(1,2),'go',path(541,1),path(541,2),'ro','Linewidth',9)
+legend('Path','Start','Critical Point')
+axis tight
+%%
+% hold on;
+% plot(path1(:,1),path1(:,2),'r-','Linewidth',2)

@@ -33,10 +33,10 @@ end
 
 % hold on;
 % plot(path1(:,1),path1(:,2),'r-','Linewidth',2)
-figure
+figure(1)
 surf(map)
 figure(2)
-clf
+clf(figure(2),'reset')
 pause(2)
 h=animatedline('Color','b','LineWidth',12);
 for t=1:length(path)
