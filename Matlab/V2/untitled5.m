@@ -1,0 +1,1 @@
+a=[test(1,1),test(end,1)],b=[test(1,2),test(end,2)]
